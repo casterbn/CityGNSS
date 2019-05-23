@@ -16,7 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        
+        //run objects before launching any windows
+        //as running notifications setup
+        //
+        
+        
+        
         // Override point for customization after application launch.
+        window = UIWindow()
+        
+        //vai permitir que o conteudo do ContainerController seja a raiz da app depois de iniciada:
+        window?.rootViewController = ContainerController()
+        window?.makeKeyAndVisible()
+        
+        print("CityGNSS--------")
         return true
     }
 

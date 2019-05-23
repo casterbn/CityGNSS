@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D8F04C95AB184CC3A721789 /* Pods_CityGNSS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3950C1AFEBC14DF4C76EF798 /* Pods_CityGNSS.framework */; };
+		A90A7F07227AFF9E0078E78B /* SelectConstellationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90A7F06227AFF9E0078E78B /* SelectConstellationTableViewController.swift */; };
+		A90A7F0C227B4E6F0078E78B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90A7F0B227B4E6F0078E78B /* MapKit.framework */; };
+		A919085D22649CC600186911 /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919085C22649CC600186911 /* MenuOptionCell.swift */; };
+		A919085F2264BBDE00186911 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919085E2264BBDE00186911 /* MenuOption.swift */; };
+		A9228DBF2278838800B723C1 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9228DBE2278838800B723C1 /* Settings.storyboard */; };
+		A9228DC12278853B00B723C1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9228DC02278853B00B723C1 /* TableViewController.swift */; };
+		A9363CFF228C25E100EB6C02 /* CG_Satellite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9363CFE228C25E100EB6C02 /* CG_Satellite.swift */; };
+		A9363D01228C2F2500EB6C02 /* CG_Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9363D00228C2F2500EB6C02 /* CG_Interface.swift */; };
+		A9363D03228DA1C300EB6C02 /* DataSettingsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9363D02228DA1C300EB6C02 /* DataSettingsDelegate.swift */; };
+		A95B9D6D225F7E1800D6D841 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B9D6C225F7E1800D6D841 /* AppDelegate.swift */; };
+		A95B9D72225F7E1800D6D841 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95B9D70225F7E1800D6D841 /* Main.storyboard */; };
+		A95B9D75225F7E1800D6D841 /* SNLocation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A95B9D73225F7E1800D6D841 /* SNLocation.xcdatamodeld */; };
+		A95B9D77225F7E1B00D6D841 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A95B9D76225F7E1B00D6D841 /* Assets.xcassets */; };
+		A95B9D7A225F7E1B00D6D841 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95B9D78225F7E1B00D6D841 /* LaunchScreen.storyboard */; };
+		A95B9D86225FABEE00D6D841 /* SPLASHSCREEN.png in Resources */ = {isa = PBXBuildFile; fileRef = A95B9D85225FABEE00D6D841 /* SPLASHSCREEN.png */; };
+		A95B9D8E2260A47800D6D841 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B9D8D2260A47800D6D841 /* ContainerController.swift */; };
+		A95B9D902260A4A300D6D841 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B9D8F2260A4A300D6D841 /* MenuController.swift */; };
+		A972533A229414CD00FA4920 /* LocationInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9725339229414CD00FA4920 /* LocationInfo.storyboard */; };
+		A98BC72022955357002381D6 /* LocationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98BC71F22955357002381D6 /* LocationInfoViewController.swift */; };
+		A98BC72222958568002381D6 /* LocInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98BC72122958567002381D6 /* LocInfoTableViewController.swift */; };
+		A9D6568322663E4F007CF8BC /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6568122663E4F007CF8BC /* AboutController.swift */; };
+		A9D6568422663E4F007CF8BC /* AboutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9D6568222663E4F007CF8BC /* AboutController.xib */; };
+		A9D6568B22667286007CF8BC /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6568922667286007CF8BC /* HomeController.swift */; };
+		A9D6568C22667286007CF8BC /* HomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9D6568A22667286007CF8BC /* HomeController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A9175E9B227C9130006E5F74 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3950C1AFEBC14DF4C76EF798 /* Pods_CityGNSS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CityGNSS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E776F83EF80FDAB920A312A /* Pods-CityGNSS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CityGNSS.debug.xcconfig"; path = "Target Support Files/Pods-CityGNSS/Pods-CityGNSS.debug.xcconfig"; sourceTree = "<group>"; };
+		A90A7F06227AFF9E0078E78B /* SelectConstellationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectConstellationTableViewController.swift; sourceTree = "<group>"; };
+		A90A7F0B227B4E6F0078E78B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A919085C22649CC600186911 /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
+		A919085E2264BBDE00186911 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
+		A9228DBE2278838800B723C1 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		A9228DC02278853B00B723C1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		A9363CE5228C17F600EB6C02 /* CityGNSSFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityGNSSFramework.h; sourceTree = "<group>"; };
+		A9363CE6228C17F600EB6C02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9363CFE228C25E100EB6C02 /* CG_Satellite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CG_Satellite.swift; path = Pods/CityGNSSFramework/CG_Satellite.swift; sourceTree = SOURCE_ROOT; };
+		A9363D00228C2F2500EB6C02 /* CG_Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CG_Interface.swift; sourceTree = "<group>"; };
+		A9363D02228DA1C300EB6C02 /* DataSettingsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSettingsDelegate.swift; sourceTree = "<group>"; };
+		A95B9D69225F7E1800D6D841 /* CityGNSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityGNSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A95B9D6C225F7E1800D6D841 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A95B9D71225F7E1800D6D841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A95B9D74225F7E1800D6D841 /* SNLocation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SNLocation.xcdatamodel; sourceTree = "<group>"; };
+		A95B9D76225F7E1B00D6D841 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A95B9D79225F7E1B00D6D841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A95B9D7B225F7E1B00D6D841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A95B9D85225FABEE00D6D841 /* SPLASHSCREEN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SPLASHSCREEN.png; path = ../SNLocation/Assets.xcassets/LaunchImage.launchimage/SPLASHSCREEN.png; sourceTree = "<group>"; };
+		A95B9D8D2260A47800D6D841 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
+		A95B9D8F2260A4A300D6D841 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		A9725339229414CD00FA4920 /* LocationInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationInfo.storyboard; sourceTree = "<group>"; };
+		A98BC71F22955357002381D6 /* LocationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoViewController.swift; sourceTree = "<group>"; };
+		A98BC72122958567002381D6 /* LocInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocInfoTableViewController.swift; sourceTree = "<group>"; };
+		A9D6568122663E4F007CF8BC /* AboutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
+		A9D6568222663E4F007CF8BC /* AboutController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutController.xib; sourceTree = "<group>"; };
+		A9D6568922667286007CF8BC /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		A9D6568A22667286007CF8BC /* HomeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeController.xib; sourceTree = "<group>"; };
+		EC665CF0BD20E4A6E0CC2FC4 /* Pods-CityGNSS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CityGNSS.release.xcconfig"; path = "Target Support Files/Pods-CityGNSS/Pods-CityGNSS.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A95B9D66225F7E1800D6D841 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A90A7F0C227B4E6F0078E78B /* MapKit.framework in Frameworks */,
+				8D8F04C95AB184CC3A721789 /* Pods_CityGNSS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E7A0309C8C86874E3AD386B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E776F83EF80FDAB920A312A /* Pods-CityGNSS.debug.xcconfig */,
+				EC665CF0BD20E4A6E0CC2FC4 /* Pods-CityGNSS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A90A7F08227B07420078E78B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A9D6568A22667286007CF8BC /* HomeController.xib */,
+				A9D6568922667286007CF8BC /* HomeController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A90A7F09227B07520078E78B /* About */ = {
+			isa = PBXGroup;
+			children = (
+				A9D6568122663E4F007CF8BC /* AboutController.swift */,
+				A9D6568222663E4F007CF8BC /* AboutController.xib */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		A90A7F0A227B4E6F0078E78B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A90A7F0B227B4E6F0078E78B /* MapKit.framework */,
+				3950C1AFEBC14DF4C76EF798 /* Pods_CityGNSS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A911324122788231008C85A8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A9228DBE2278838800B723C1 /* Settings.storyboard */,
+				A9228DC02278853B00B723C1 /* TableViewController.swift */,
+				A90A7F06227AFF9E0078E78B /* SelectConstellationTableViewController.swift */,
+				A9363D02228DA1C300EB6C02 /* DataSettingsDelegate.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A914E3BA2292C46A00585EFE /* SatelliteList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SatelliteList;
+			sourceTree = "<group>";
+		};
+		A914E3BB2292C47600585EFE /* LocationInfo */ = {
+			isa = PBXGroup;
+			children = (
+				A9725339229414CD00FA4920 /* LocationInfo.storyboard */,
+				A98BC71F22955357002381D6 /* LocationInfoViewController.swift */,
+				A98BC72122958567002381D6 /* LocInfoTableViewController.swift */,
+			);
+			path = LocationInfo;
+			sourceTree = "<group>";
+		};
+		A914E3BC2292C48E00585EFE /* NMEAdata */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NMEAdata;
+			sourceTree = "<group>";
+		};
+		A919085722648B3500186911 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A919085822648B5F00186911 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A919085E2264BBDE00186911 /* MenuOption.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A919085922648B6700186911 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A914E3BC2292C48E00585EFE /* NMEAdata */,
+				A914E3BB2292C47600585EFE /* LocationInfo */,
+				A914E3BA2292C46A00585EFE /* SatelliteList */,
+				A90A7F09227B07520078E78B /* About */,
+				A911324122788231008C85A8 /* Settings */,
+				A90A7F08227B07420078E78B /* Home */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9363CE4228C17F600EB6C02 /* CityGNSSFramework */ = {
+			isa = PBXGroup;
+			children = (
+				A9363CE5228C17F600EB6C02 /* CityGNSSFramework.h */,
+				A9363CFE228C25E100EB6C02 /* CG_Satellite.swift */,
+				A9363CE6228C17F600EB6C02 /* Info.plist */,
+				A9363D00228C2F2500EB6C02 /* CG_Interface.swift */,
+			);
+			path = CityGNSSFramework;
+			sourceTree = "<group>";
+		};
+		A95B9D60225F7E1800D6D841 = {
+			isa = PBXGroup;
+			children = (
+				A919085722648B3500186911 /* Utils */,
+				A919085822648B5F00186911 /* Model */,
+				A919085922648B6700186911 /* View */,
+				A95B9D8A2260A41700D6D841 /* Controller */,
+				A95B9D89225FAC4800D6D841 /* Imgs */,
+				A95B9D6B225F7E1800D6D841 /* SNLocation */,
+				A9363CE4228C17F600EB6C02 /* CityGNSSFramework */,
+				A95B9D6A225F7E1800D6D841 /* Products */,
+				A90A7F0A227B4E6F0078E78B /* Frameworks */,
+				2E7A0309C8C86874E3AD386B /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		A95B9D6A225F7E1800D6D841 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A95B9D69225F7E1800D6D841 /* CityGNSS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A95B9D6B225F7E1800D6D841 /* SNLocation */ = {
+			isa = PBXGroup;
+			children = (
+				A95B9D6C225F7E1800D6D841 /* AppDelegate.swift */,
+				A95B9D70225F7E1800D6D841 /* Main.storyboard */,
+				A95B9D76225F7E1B00D6D841 /* Assets.xcassets */,
+				A95B9D78225F7E1B00D6D841 /* LaunchScreen.storyboard */,
+				A95B9D7B225F7E1B00D6D841 /* Info.plist */,
+				A95B9D73225F7E1800D6D841 /* SNLocation.xcdatamodeld */,
+			);
+			path = SNLocation;
+			sourceTree = "<group>";
+		};
+		A95B9D89225FAC4800D6D841 /* Imgs */ = {
+			isa = PBXGroup;
+			children = (
+				A95B9D85225FABEE00D6D841 /* SPLASHSCREEN.png */,
+			);
+			path = Imgs;
+			sourceTree = "<group>";
+		};
+		A95B9D8A2260A41700D6D841 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A95B9D8D2260A47800D6D841 /* ContainerController.swift */,
+				A919085C22649CC600186911 /* MenuOptionCell.swift */,
+				A95B9D8F2260A4A300D6D841 /* MenuController.swift */,
+			);
+			path = Controller;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A95B9D68225F7E1800D6D841 /* CityGNSS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A95B9D7E225F7E1B00D6D841 /* Build configuration list for PBXNativeTarget "CityGNSS" */;
+			buildPhases = (
+				BBA2C533549B84844AC95691 /* [CP] Check Pods Manifest.lock */,
+				A95B9D65225F7E1800D6D841 /* Sources */,
+				A95B9D66225F7E1800D6D841 /* Frameworks */,
+				A95B9D67225F7E1800D6D841 /* Resources */,
+				A9175E9B227C9130006E5F74 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CityGNSS;
+			productName = SNLocation;
+			productReference = A95B9D69225F7E1800D6D841 /* CityGNSS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A95B9D61225F7E1800D6D841 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Tiago Maia";
+				TargetAttributes = {
+					A95B9D68225F7E1800D6D841 = {
+						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = A95B9D64225F7E1800D6D841 /* Build configuration list for PBXProject "CityGNSS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A95B9D60225F7E1800D6D841;
+			productRefGroup = A95B9D6A225F7E1800D6D841 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A95B9D68225F7E1800D6D841 /* CityGNSS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A95B9D67225F7E1800D6D841 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A95B9D7A225F7E1B00D6D841 /* LaunchScreen.storyboard in Resources */,
+				A95B9D77225F7E1B00D6D841 /* Assets.xcassets in Resources */,
+				A9D6568422663E4F007CF8BC /* AboutController.xib in Resources */,
+				A9228DBF2278838800B723C1 /* Settings.storyboard in Resources */,
+				A95B9D86225FABEE00D6D841 /* SPLASHSCREEN.png in Resources */,
+				A9D6568C22667286007CF8BC /* HomeController.xib in Resources */,
+				A972533A229414CD00FA4920 /* LocationInfo.storyboard in Resources */,
+				A95B9D72225F7E1800D6D841 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BBA2C533549B84844AC95691 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CityGNSS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A95B9D65225F7E1800D6D841 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A919085D22649CC600186911 /* MenuOptionCell.swift in Sources */,
+				A919085F2264BBDE00186911 /* MenuOption.swift in Sources */,
+				A98BC72022955357002381D6 /* LocationInfoViewController.swift in Sources */,
+				A98BC72222958568002381D6 /* LocInfoTableViewController.swift in Sources */,
+				A95B9D8E2260A47800D6D841 /* ContainerController.swift in Sources */,
+				A95B9D75225F7E1800D6D841 /* SNLocation.xcdatamodeld in Sources */,
+				A90A7F07227AFF9E0078E78B /* SelectConstellationTableViewController.swift in Sources */,
+				A9D6568B22667286007CF8BC /* HomeController.swift in Sources */,
+				A9228DC12278853B00B723C1 /* TableViewController.swift in Sources */,
+				A9363CFF228C25E100EB6C02 /* CG_Satellite.swift in Sources */,
+				A95B9D902260A4A300D6D841 /* MenuController.swift in Sources */,
+				A9363D03228DA1C300EB6C02 /* DataSettingsDelegate.swift in Sources */,
+				A95B9D6D225F7E1800D6D841 /* AppDelegate.swift in Sources */,
+				A9D6568322663E4F007CF8BC /* AboutController.swift in Sources */,
+				A9363D01228C2F2500EB6C02 /* CG_Interface.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A95B9D70225F7E1800D6D841 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A95B9D71225F7E1800D6D841 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A95B9D78225F7E1B00D6D841 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A95B9D79225F7E1B00D6D841 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A95B9D7C225F7E1B00D6D841 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A95B9D7D225F7E1B00D6D841 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A95B9D7F225F7E1B00D6D841 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E776F83EF80FDAB920A312A /* Pods-CityGNSS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BUX558WABQ;
+				INFOPLIST_FILE = SNLocation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = a21230041.CityGNSS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A95B9D80225F7E1B00D6D841 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC665CF0BD20E4A6E0CC2FC4 /* Pods-CityGNSS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BUX558WABQ;
+				INFOPLIST_FILE = SNLocation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = a21230041.CityGNSS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A95B9D64225F7E1800D6D841 /* Build configuration list for PBXProject "CityGNSS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A95B9D7C225F7E1B00D6D841 /* Debug */,
+				A95B9D7D225F7E1B00D6D841 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A95B9D7E225F7E1B00D6D841 /* Build configuration list for PBXNativeTarget "CityGNSS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A95B9D7F225F7E1B00D6D841 /* Debug */,
+				A95B9D80225F7E1B00D6D841 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A95B9D73225F7E1800D6D841 /* SNLocation.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A95B9D74225F7E1800D6D841 /* SNLocation.xcdatamodel */,
+			);
+			currentVersion = A95B9D74225F7E1800D6D841 /* SNLocation.xcdatamodel */;
+			path = SNLocation.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A95B9D61225F7E1800D6D841 /* Project object */;
+}
