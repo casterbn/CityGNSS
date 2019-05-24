@@ -59,7 +59,7 @@
 		A9363CE5228C17F600EB6C02 /* CityGNSSFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityGNSSFramework.h; sourceTree = "<group>"; };
 		A9363CE6228C17F600EB6C02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9363CFE228C25E100EB6C02 /* CG_Satellite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CG_Satellite.swift; path = Pods/CityGNSSFramework/CG_Satellite.swift; sourceTree = SOURCE_ROOT; };
-		A9363D00228C2F2500EB6C02 /* CG_Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CG_Interface.swift; sourceTree = "<group>"; };
+		A9363D00228C2F2500EB6C02 /* CG_Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CG_Interface.swift; path = ../Pods/CityGNSSFramework/CG_Interface.swift; sourceTree = "<group>"; };
 		A9363D02228DA1C300EB6C02 /* DataSettingsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSettingsDelegate.swift; sourceTree = "<group>"; };
 		A95B9D69225F7E1800D6D841 /* CityGNSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityGNSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95B9D6C225F7E1800D6D841 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };

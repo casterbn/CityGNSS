@@ -53,7 +53,7 @@ enum ConstellationType: Int, CustomStringConvertible{
     var value: Int{
         switch self{
         case .GALILEO: return 6
-        case .GLONASS: return 2
+        case .GLONASS: return 3
         case .GPS: return 1
         case .UNKNOW: return 0
         }

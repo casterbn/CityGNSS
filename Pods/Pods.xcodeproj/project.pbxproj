@@ -11,6 +11,9 @@
 		4A3F2B8CBD8AB23FAD461DFB866FDD92 /* Pods-CityGNSS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2313CC6CE46A931BD8F70991F3D9C3FD /* Pods-CityGNSS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9363CDA228AFFB000EB6C02 /* CityGNSS in Resources */ = {isa = PBXBuildFile; fileRef = A9363CD9228AFFB000EB6C02 /* CityGNSS */; };
 		A9363CF8228C20CB00EB6C02 /* CityGNSSFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = A9363CF6228C20CB00EB6C02 /* CityGNSSFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A99BEE172297F2B6006FCD9A /* CityGNSS in Resources */ = {isa = PBXBuildFile; fileRef = A9363CD9228AFFB000EB6C02 /* CityGNSS */; };
+		A99BEE1B2297F2EE006FCD9A /* CG_Satellite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BEE182297F2ED006FCD9A /* CG_Satellite.swift */; };
+		A99BEE1C2297F2EE006FCD9A /* CG_Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BEE192297F2ED006FCD9A /* CG_Interface.swift */; };
 		D613385AAF3109FE5E4B971160F7F3AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +31,9 @@
 		A9363CF4228C20CB00EB6C02 /* CityGNSSFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CityGNSSFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9363CF6228C20CB00EB6C02 /* CityGNSSFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityGNSSFramework.h; sourceTree = "<group>"; };
 		A9363CF7228C20CB00EB6C02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A99BEE182297F2ED006FCD9A /* CG_Satellite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CG_Satellite.swift; sourceTree = "<group>"; };
+		A99BEE192297F2ED006FCD9A /* CG_Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CG_Interface.swift; sourceTree = "<group>"; };
+		A99BEE1A2297F2EE006FCD9A /* CityGNSSFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CityGNSSFramework.h; path = ../../CityGNSSFramework/CityGNSSFramework.h; sourceTree = "<group>"; };
 		B9996A43EB3B3A1B1EFBEB902BB2868E /* Pods-CityGNSS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CityGNSS-acknowledgements.plist"; sourceTree = "<group>"; };
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -87,6 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				A9363CF6228C20CB00EB6C02 /* CityGNSSFramework.h */,
+				A99BEE1A2297F2EE006FCD9A /* CityGNSSFramework.h */,
+				A99BEE182297F2ED006FCD9A /* CG_Satellite.swift */,
+				A99BEE192297F2ED006FCD9A /* CG_Interface.swift */,
 				A9363CF7228C20CB00EB6C02 /* Info.plist */,
 			);
 			path = CityGNSSFramework;
@@ -233,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A99BEE172297F2B6006FCD9A /* CityGNSS in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +261,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A99BEE1B2297F2EE006FCD9A /* CG_Satellite.swift in Sources */,
+				A99BEE1C2297F2EE006FCD9A /* CG_Interface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

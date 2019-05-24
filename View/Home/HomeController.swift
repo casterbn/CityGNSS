@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
-import CityGNSSFramework
+import CityGNSSservice
 
 
 class HomeController: UIViewController {
@@ -50,7 +50,7 @@ class HomeController: UIViewController {
         //configure navigattionbar
         configureNavigationBar()
         
-        let sat = CG_Satelitte(name: "String", id: 12)
+        let sat = CG_Satelitte(name: "SatelliteTeste", id: 12)
         sat.info()
         
     }
