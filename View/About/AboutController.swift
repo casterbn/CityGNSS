@@ -12,6 +12,8 @@ import UIKit
 class AboutController: UIViewController {
 
     var delegate: MenuControllerDelegate?
+    @IBOutlet weak var lb_description: UITextView!
+    @IBOutlet weak var lb_author: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,9 @@ class AboutController: UIViewController {
         view.backgroundColor = .white
         
         //configure navigattionbar
-        configureNavigationBar()
+        configureNavigationBar(with: self.navigationController!.navigationBar)
+        navigationItem.title = "About"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu-filled-50").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuToggle))
     }
 
 
@@ -44,19 +48,7 @@ class AboutController: UIViewController {
         //print("---/ handlemenutoggle ---")
         
     }
-    func configureNavigationBar() {
-        
-        navigationController?.navigationBar.barTintColor = .darkGray
-        navigationController?.navigationBar.barStyle = .black
-        
-        
-        navigationItem.title = "About"
-        //navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "home-filled-50").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuToggle))
-        //navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleMenuToggle))
-         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu-filled-50").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuToggle))
-        print("debug: \(navigationItem.leftBarButtonItem)")
-        
-    }
+    
     
     
     override func viewWillDisappear(_ animated: Bool) {

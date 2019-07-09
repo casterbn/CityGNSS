@@ -1,0 +1,69 @@
+/* 
+  Localizable.strings
+  CityGNSS
+
+  Created by Tiago Maia on 13/06/2019.
+  Copyright © 2019 Tiago Maia. All rights reserved.
+*/
+
+/* ENGLISH TABLE STRING*/
+
+/* Class = "UILabel"; text = "ShipNow"; ObjectID = "eBn-PT-8Lv"; */
+"horizontal.text" = "Horizontal";
+"vertical.text" = "Vertical";
+"accuracy.text" = "Accuracy";
+"latitude.text" = "Latitude";
+"longitude.text" = "Longitude";
+"utc.text" = "UTC Time";
+"altitude.text" = "Altitude";
+"speed.text" = "Speed";
+"haccuracy.text" = "Horizontal accuracy";
+"vaccuracy.text" = "Vertical accuracy";
+
+/* Menu strings */
+"map.text" = "Map";
+"locationinfo.text" = "Location Info";
+"satellitelist.text" = "Satellite List";
+"nmeadata.text" = "NMEA Data";
+"settings.text" = "Settings";
+"about.text" = "About";
+
+/* Settings */
+"preferences.text" = "Preferences";
+"information.text" = "Information";
+"connbluetooth.text" = "Connected to GNSS Bluetooth";
+"constelations.text" = "Constellations";
+"viewsatellitemap.text" = "Map satellite view";
+"version.text" = "Build version";
+
+/* About */
+"aboutdescription.text" = "The location trhought the Global Positioning System (GPS) in urban environment sometimes generate errors from satellites signals what imply in poor accuracy on the position of the user and therefor the use is limited for mobile services. Then, this application has a goal to get all information about the status of the position, list all satellites in view of Global Navigation Satellite System (GNSS).";
+"author.text"  = "Author";
+
+
+/* on NMEA DATA options */
+"exportdata.text" = "Save this data to a file";
+
+
+/* Stallite List */
+
+"satinview.text" = "Satellites in view";
+"satinuse.text" = "Satellites in use";
+"gpsSat.text" = "GPS Satellites";
+"glonassSat.text" = "GLONASS Satellites";
+"galileoSat.text" = "Galileo Satellites";
+
+//popup
+"satelliteinfo.text" = "Satellite Info";
+"satAzimuth.text" = "Azimuth:";
+"satElevation.text" = "Elevation:";
+"satCarrierFreq.text" = "Carrier frequency:";
+"satCarrierToNoise.text" = "Carrier-to-Noise:";
+"satPseudoDistance.text" = "Pseudo-distance:";
+
+
+//alert
+"stListMessage.text" = "If no device GNSS is connected this view only will display simulated values until you connect to a device";
+
+
+

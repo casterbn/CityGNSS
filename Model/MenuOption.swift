@@ -17,14 +17,16 @@ enum MenuOption: Int, CustomStringConvertible{
     case ABOUT
     
     
+    /*  option detail for any case of selected option  */
+    
     var description: String{
         switch self{
-        case .MAP: return "Map"
-        case .LOCATIONINFO: return "Location Info"
-        case .NMEADATA: return "NMEA data"
-        case .SATELLITELIST: return "Satellite List"
-        case .SETTINGS: return "Settings"
-        case .ABOUT: return "About"
+        case .MAP: return NSLocalizedString("map.text", comment: "Map") //"Map"
+        case .LOCATIONINFO: return NSLocalizedString("locationinfo.text", comment: "Location Info")
+        case .NMEADATA: return NSLocalizedString("nmeadata.text", comment: "NMEA data")
+        case .SATELLITELIST: return NSLocalizedString("satellitelist.text", comment: "Satellite List")
+        case .SETTINGS: return NSLocalizedString("settings.text", comment: "Settings")
+        case .ABOUT: return NSLocalizedString("about.text", comment: "About")
         }
     }
     

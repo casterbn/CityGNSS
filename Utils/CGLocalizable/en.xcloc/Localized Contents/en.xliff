@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="CityGNSSMain/Base.lproj/LaunchScreen.storyboard" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2" build-num="10E125"/>
+    </header>
+    <body>
+      <trans-unit id="eBn-PT-8Lv.text">
+        <source>ShipNow</source>
+        <target>ShipNow</target>
+        <note>Class = "UILabel"; text = "ShipNow"; ObjectID = "eBn-PT-8Lv";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="CityGNSSMain/en.lproj/InfoPlist.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2" build-num="10E125"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleDisplayName">
+        <source>CityGNSS</source>
+        <target>CityGNSS</target>
+        <note>Bundle display name</note>
+      </trans-unit>
+      <trans-unit id="CFBundleName">
+        <source>CityGNSS</source>
+        <target>CityGNSS</target>
+        <note>Bundle name</note>
+      </trans-unit>
+      <trans-unit id="NSLocationAlwaysAndWhenInUseUsageDescription">
+        <source>CityGNSS : authorization for GPS always and when in use</source>
+        <target>CityGNSS : authorization for GPS always and when in use</target>
+        <note>Privacy - Location Always and When In Use Usage Description</note>
+      </trans-unit>
+      <trans-unit id="NSLocationAlwaysUsageDescription">
+        <source>CityGNSS : authorization for GPS </source>
+        <target>CityGNSS : authorization for GPS </target>
+        <note>Privacy - Location Always Usage Description</note>
+      </trans-unit>
+      <trans-unit id="NSLocationWhenInUseUsageDescription">
+        <source>CityGNSS : authorization for GPS when in use</source>
+        <target>CityGNSS : authorization for GPS when in use</target>
+        <note>Privacy - Location When In Use Usage Description</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

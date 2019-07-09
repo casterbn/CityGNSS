@@ -1,0 +1,10 @@
+/* Bundle display name */
+"CFBundleDisplayName" = "CityGNSS";
+/* Bundle name */
+"CFBundleName" = "CityGNSS";
+/* Privacy - Location Always and When In Use Usage Description */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "CityGNSS : autorização do recurso de GPS para quando está a utilizar a aplicação";
+/* Privacy - Location Always Usage Description */
+"NSLocationAlwaysUsageDescription" = "CityGNSS : autorização de recorrer ao GPS para utilização constante";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "CityGNSS : autorização do recurso de GPS apenas na sua utilização da aplicação";

@@ -12,6 +12,7 @@ import UIKit
 
 protocol MenuControllerDelegate{
     func handleMenuToggle(forMenuOption menuOption: MenuOption?)
+    func selectChangeView(forMenuOption menuOption: MenuOption)
 }
 
 
@@ -24,11 +25,11 @@ class ContainerController: UIViewController {
     var homeController: HomeController!
     var currentViewController: UIViewController!
     var isMenuExpanded = false
-    var isTrueAnimteStatusBar = true       //this setting can be edited here directly //
+    var isTrueAnimteStatusBar = true       //this setting can be edited here directly, animate if status bar will be hidden //
     var lastMenuOption: MenuOption!
-   
-   
-   
+    //overlay when menu is on
+    var overlay: UIView!
+  
     
     // MARK: - Init
     
@@ -36,21 +37,22 @@ class ContainerController: UIViewController {
         super.viewDidLoad()
         
         //call function configureController to set all steps of navigationController
-        
+       
         configureHomeController()
     }
     
     
-    //set background status bar color light (for dark backgrounds) of the iOS
+    //set background StatusBar color light (for dark backgrounds) of the iOS (clock, network lenght and other details)
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
     //animation od status bar
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
-        return .slide
+        return .none
     }
     override var prefersStatusBarHidden: Bool{
-        return isMenuExpanded
+                        //changed this option, to set up alpha
+        return  false // isMenuExpanded   //hide statubar when Menu Is Expanded
     }
     
     // MARK: - Handlers
@@ -76,73 +78,9 @@ class ContainerController: UIViewController {
         //configure menu controller
         menuController = MenuController()
         menuController.delegate = self
-    }
-    
-  
-    
-    func configureAboutController(){
         
-        let aboutController = AboutController()
-
-        aboutController.delegate = self
-        
-        
-       // navController.viewControllers = [aboutController]
-       // let  navController = UINavigationController(rootViewController: aboutController)
-       // let _:UIStoryboard = UIStoryboard(name: "ContainerController",bundle: nil)
-       // let dvc = mainStoreBoard.instantiateViewController(withIdentifier: "aboutController")
-       
-        
-        // navigationController?.pushViewController(aboutController, animated: false)
-        // navigationController?.popToViewController(aboutController, animated: false)
-        // navigationController?.present(aboutController, animated: false, completion: nil)
-        // navigationController?.willMove(toParent: aboutController)
-       // navigationController?.pushViewController(aboutController, animated: true)
-        
-//        self.view.window!.rootViewController = navController
-//        self.view.window?.makeKeyAndVisible()
-        //aboutController.delegate = self
-        //if(menuController == nil) {return}
-        //aboutController.view.insertSubview(menuController.view, at: 0)
-        //aboutController.addChild(menuController)
-        //menuController.didMove(toParent: aboutController)
-        //navController.setViewControllers([aboutController], animated: true)
-       
-       
-   
-
-//
-        //currentViewController.navigationController?.replaceTopViewController(with: aboutController, animated: true)
-        //currentViewController = aboutController
-       /**/ // navigationController?.replaceTopViewController(with: aboutController, animated: false)
-        //new.replaceTopViewController(with: aboutController, animated: false)
-        
-        
-        
-        present(aboutController, animated:true, completion:nil)
-        
-        
-       
-        
-        setTransitionFromRight()
-        
-        print("pushViewController")
-        //present(aboutController, animated: false)
-//        self.navigationController?.pushViewController(navController, animated: false)
-       
-        //present(navController, animated: false)
-        
-        
-//        aboutController.delegate = self
-//
-//        centerController = UINavigationController(rootViewController: aboutController)
-//
-//        view.addSubview(centerController.view)
-//        addChild(centerController)
-//        centerController.didMove(toParent: self);
-        
-        
-       
+        //overlay
+        overlay = UIView(frame: CGRect(x: 0, y: 0, width: currentViewController.view.frame.size.width, height: currentViewController.view.frame.size.height))
     }
     
     
@@ -156,8 +94,8 @@ class ContainerController: UIViewController {
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 
                 //set width window of side menu, all width size minus some
-                self.currentViewController.view.frame.origin.x = self.currentViewController.view.frame.width - 180
-                
+                self.currentViewController.view.frame.origin.x = self.currentViewController.view.frame.width - 115
+               
             }, completion: nil)
         }else{
             // hide menu
@@ -168,18 +106,14 @@ class ContainerController: UIViewController {
             }) { (_) in
                 guard let menuOption = menuOption else { return }
                 if(menuOption != self.lastMenuOption || menuOption == .SETTINGS){
-                    
-                    self.didSelectMenuOption(menuOption: menuOption)
-                    if(menuOption != .SETTINGS){
-                        self.lastMenuOption = menuOption
-                    }
-                   
+                    self.selectChangeView(forMenuOption: menuOption)
                 }else{
-                    self.currentViewController.reloadInputViews()
+                    //  
                 }
             }
         }
         
+        //set updates on animation for hidden status bar
         if isTrueAnimteStatusBar{
             animateStatusBar()
         }
@@ -191,10 +125,7 @@ class ContainerController: UIViewController {
         if(currentViewController == nil){return}
         //self.centerController?.view.removeFromSuperview()
         //self.centerController = nil
-       
-        
-        
-        
+
         switch menuOption{
         case .MAP:
             print("Show Map as home")
@@ -210,22 +141,22 @@ class ContainerController: UIViewController {
             controller.delegate = self
             replaceViewController(forNextViewController: controller)
             //self.present(controller, animated: true, completion: nil)
+            
         case .SATELLITELIST:
             print("Show satellite list")
+            let SatelliteListStoryboard = UIStoryboard(name: "SatelliteList", bundle: nil)
+            let controller = SatelliteListStoryboard.instantiateViewController(withIdentifier: "SatelliteListStoryboard") as! SatelliteListViewController
+            controller.delegate = self
+            replaceViewController(forNextViewController: controller)
+            
         case .NMEADATA:
             print("Show nmeadata")
+            let controller = NMEATableViewController()
+            controller.delegate = self
+            replaceViewController(forNextViewController: controller)
+            
         case .SETTINGS:
             print("Show settings")
-            //setTransitionFromRight()
-            //let controller = SettingsController()
-           // present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
-            
-//            let viewController = TableViewController()
-//            present(UINavigationController(rootViewController: viewController), animated: true, completion: nil)
-            
-            
-          
-            
             let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
            // if(settingsStoryboard == nil){ return }
             
@@ -239,7 +170,6 @@ class ContainerController: UIViewController {
             let controller = AboutController()
             controller.delegate = self
             replaceViewController(forNextViewController: controller)
-            
         }
         
     }
@@ -247,8 +177,24 @@ class ContainerController: UIViewController {
     //animation status bar when menu is expanded
     func animateStatusBar() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            //self.navigationController?.navigationBar.frame = self.navigationController!.navigationBar.bounds
+            
+            let statusBarWindow = UIApplication.shared.value(forKey: "statusBarWindow") as? UIWindow
+            if(self.isMenuExpanded){
+                UIView.animate(withDuration: 1) {
+                    statusBarWindow?.transform = CGAffineTransform(translationX: 0, y: -20)
+                    statusBarWindow?.alpha = 0
+                }
+            }else{
+                UIView.animate(withDuration: 1) {
+                    statusBarWindow?.transform = CGAffineTransform(translationX: 0, y: 0)
+                    statusBarWindow?.alpha = 1
+                }
+            }
+            //updates view if needed
             self.setNeedsStatusBarAppearanceUpdate()
         }, completion: nil)
+        
     }
     
     //shadow for container
@@ -256,38 +202,66 @@ class ContainerController: UIViewController {
         if shouldShowShadow {
             currentViewController.view.layer.shadowOpacity = 0.8
             currentViewController.view.layer.shadowRadius = 4.0
-            
-            
+            showOverlay()
         } else {
             currentViewController.view.layer.shadowOpacity = 0.0
             currentViewController.view.layer.shadowRadius = 0.0
-            
-            
+            hideOverlay()
         }
     }
     
- 
-    
+    // effect overlay
+    func showOverlay(){
+      
+        overlay.backgroundColor = .black
+        overlay.alpha = 0.0
+        currentViewController.view.addSubview(overlay)
+        UIView.animate(withDuration: 0.25) { () -> Void in
+            self.overlay.alpha = 0.175
+            self.view.layoutIfNeeded()
+        }
+        
+    }
+    func hideOverlay() {
+      overlay.removeFromSuperview()
+       
+    }
 }
 
 extension ContainerController: MenuControllerDelegate{
+    
+    //MARK: - handles
+    @objc func handleMenuToggleOverlay(){
+       handleMenuToggle(forMenuOption: nil)
+    }
+    
     func handleMenuToggle(forMenuOption menuOption: MenuOption?) {
         //if side menu isn't expand set menuController
         if !isMenuExpanded {
             
             //if menuController == nil{
                 //add menu controller here
+                addChild(menuController) //create relationship to manage memory
                 view.insertSubview(menuController.view, at: 0)
-                addChild(menuController)
-                menuController.didMove(toParent: self)
+            
+                //menuController.didMove(toParent: self)
             
                
-                print("Did menu controller was added?")
-                view.backgroundColor = .gray
+                //print("Did menu controller was added?")
+                //view.backgroundColor = .gray
            // }
-           
             
-            print("about isMenuExpanded \(isMenuExpanded)")
+            //on overlay gestures
+            //tap
+            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleMenuToggleOverlay))
+            gestureRecognizer.delegate = self as? UIGestureRecognizerDelegate
+            overlay.addGestureRecognizer(gestureRecognizer)
+            //swipe left
+            let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleMenuToggleOverlay))
+            leftSwipe.direction = .left
+            overlay.addGestureRecognizer(leftSwipe)
+
+           // print("about isMenuExpanded \(isMenuExpanded)")
         }
         
         //show shadow if menu is expanded
@@ -300,6 +274,21 @@ extension ContainerController: MenuControllerDelegate{
         
     }
     
+    // MARK: - select and change view
+    func selectChangeView(forMenuOption menuOption: MenuOption) {
+       
+        
+        self.didSelectMenuOption(menuOption: menuOption)
+
+        if(menuOption == .LOCATIONINFO){
+            menuController.selectRowLocationInfo(menuOption: menuOption)
+        }
+        if(menuOption != .SETTINGS){
+            self.lastMenuOption = menuOption
+            print("debug option: \(self.lastMenuOption.description)")
+        }
+    }
+    
     
 
     // MARK: - transition effect
@@ -307,8 +296,8 @@ extension ContainerController: MenuControllerDelegate{
     func setTransitionFromRight(){
         let transition = CATransition()
         transition.duration = 0.3
-        transition.type = CATransitionType.reveal
-        transition.subtype = CATransitionSubtype.fromRight
+        transition.type = CATransitionType.fade
+        transition.subtype = CATransitionSubtype.fromLeft
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.linear)
         view.window!.layer.add(transition, forKey: kCATransition)
         //present(dashboardWorkout, animated: false, completion: nil)
@@ -319,16 +308,18 @@ extension ContainerController: MenuControllerDelegate{
     
     func replaceViewController(forNextViewController nextViewController:UIViewController){
         
+
         let newVC = UINavigationController(rootViewController: nextViewController)      // 1
         addChild(newVC)                                                                 // 2
         newVC.view.frame = view.bounds                                                  // 3
         view.addSubview(newVC.view)                                                     // 4
         newVC.didMove(toParent: self)                                                   // 5
+        //animation
+        setTransitionFromRight()
         currentViewController.willMove(toParent: nil)                                   // 6
         currentViewController.view.removeFromSuperview()                                // 7
         currentViewController.removeFromParent()                                        // 8
         currentViewController = newVC
-        setTransitionFromRight()
         
     }
     

@@ -1,0 +1,65 @@
+/* 
+  Localizable.strings
+  CityGNSS
+
+  Created by Tiago Maia on 13/06/2019.
+  Copyright © 2019 Tiago Maia. All rights reserved.
+*/
+
+/* PORTUGUESE TABLE STRING*/
+
+/* Class = "UILabel"; text = "ShipNow"; ObjectID = "eBn-PT-8Lv"; */
+"horizontal.text" = "Horizontal";
+"vertical.text" = "Vertical";
+"accuracy.text" = "Precisão";
+"latitude.text" = "Latitude";
+"longitude.text" = "Longitude";
+"utc.text" = "Fuso UTC";
+"altitude.text" = "Altitude";
+"speed.text" = "Velocidade";
+"haccuracy.text" = "Precisão horizontal";
+"vaccuracy.text" = "Precisão vertical";
+
+/* Menu strings */
+"map.text" = "Mapa";
+"locationinfo.text" = "Informação da Localização";
+"satellitelist.text" = "Lista de satelites";
+"nmeadata.text" = "Dados NMEA";
+"settings.text" = "Definições";
+"about.text" = "Sobre";
+
+/* Settings */
+"preferences.text" = "Preferências";
+"information.text" = "Informação";
+"connbluetooth.text" = "Conectar a um dispositivo Bluetooth";
+"constelations.text" = "Constelações";
+"viewsatellitemap.text" = "Vista satélite no mapa";
+"version.text" = "Versão";
+
+/* About */
+"aboutdescription.text" = "A localização através do sistema GPS (Global Positioning System), particularmente em ambiente urbano, onde os edifícios bloqueiam e geram erros nos sinais de satélite, tornam a localização pouco precisa e limitam a utilidade de muitos serviços móveis. Assim, esta aplicação tem a missão de obter a maior informação útil ao estado de localização, listar todas as constelações de satélites do sistema Global Navigation Satellite System (GNSS).";
+"author.text"  = "Autor";
+
+
+/* on NMEA DATA options */
+"exportdata.text" = "Guardar estes dados para um ficheiro";
+
+
+/* Stallite List */
+
+"satinview.text" = "Satelites em vista";
+"satinuse.text" = "Satelites em utilização";
+"gpsSat.text" = "GPS Satelites";
+"glonassSat.text" = "GLONASS Satelites";
+"galileoSat.text" = "Galileo Satelites";
+
+//popup
+"satelliteinfo.text" = "Informação do satelite";
+"satAzimuth.text" = "Azimute:";
+"satElevation.text" = "Elevação:";
+"satCarrierFreq.text" = "Frequência da fase:";
+"satCarrierToNoise.text" = "Frequência da fase:";
+"satPseudoDistance.text" = "Pseudo-distancia:";
+
+//alert
+"stListMessage.text" = "Se nenhum dispositivo GNSS estiver conectado apenas mostrará dados simulados nesta vista";

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Pods_CityGNSS
 
 
 
@@ -23,13 +23,18 @@ class TableViewController: UITableViewController {
     let udConstellationsChoosen = "Constellation"
     
     @IBOutlet weak var switchMapType: UISwitch!
+    @IBOutlet weak var version: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print("hello tableviewController settings")
+        
+         configureNavigationBar(with: navigationController?.navigationBar)
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.navigationBar.tintColor = .white  
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+         //self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -42,11 +47,12 @@ class TableViewController: UITableViewController {
             switchMapType.isOn = false
         }
         
+        //build version
+        version.text = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String //CFBundleShortVersionString //"\(Pods_CityGNSSVersionNumber) 
         
+       
         
-        navigationController?.navigationBar.barTintColor = .darkGray
-        navigationController?.navigationBar.barStyle = .black
-        setNeedsStatusBarAppearanceUpdate()
+        //setNeedsStatusBarAppearanceUpdate()
         
         
     }

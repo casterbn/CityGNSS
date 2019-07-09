@@ -3,7 +3,14 @@
 //  CityGNSSFramework
 //
 //  Created by Tiago Maia on 15/05/2019.
+//  Copyright © 2019 Tiago Maia. All rights reserved.
 //
+
+#ifndef CityGNSSFramework_h
+#define CityGNSSFramework_h
+
+
+#endif /* CityGNSSFramework_h */
 
 #import <UIKit/UIKit.h>
 
@@ -14,5 +21,4 @@ FOUNDATION_EXPORT double CityGNSSFrameworkVersionNumber;
 FOUNDATION_EXPORT const unsigned char CityGNSSFrameworkVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <CityGNSSFramework/PublicHeader.h>
-
 

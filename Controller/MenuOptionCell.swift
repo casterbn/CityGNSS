@@ -25,7 +25,7 @@ class MenuOptionCell: UITableViewCell {
     let descriptionLabel: UILabel = {
          //properties for Text
         let label = UILabel()
-        label.textColor = .white
+        label.textColor = .darkGray
         label.font = UIFont.systemFont(ofSize: 16)
         label.text = "Sample text"
         return label
@@ -39,7 +39,7 @@ class MenuOptionCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        backgroundColor = .gray
+        backgroundColor = .init(white: 0, alpha: 0)
         
         addSubview(iconImageView)
         //layout config icon image for each item of menu
@@ -48,6 +48,7 @@ class MenuOptionCell: UITableViewCell {
         iconImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 18).isActive = true
         iconImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
         iconImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        
         
         addSubview(descriptionLabel)
         //layout config text label for each item of menu
