@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         print("CityGNSS--------")
-       
+        print(sharedBleConnected)
         
         return true
     }

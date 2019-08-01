@@ -8,8 +8,12 @@
 
 import UIKit
 import CoreLocation
+import CoreBluetooth
 
-class NMEATableViewController: UITableViewController {
+
+// was setted 100 maximum rows in table to show
+
+class NMEATableViewController: UITableViewController, CBPeripheralDelegate {
     
     
     
@@ -21,6 +25,7 @@ class NMEATableViewController: UITableViewController {
     let nmeaDateFormatter = DateFormatter()
     var isStartedNMEA: Bool = true
     var nmeaDataString = [String](repeating: "waiting...", count: 1)
+    let collectStringNmea = CollectStringFromBLE()  //will be use only when one device is connected
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +37,24 @@ class NMEATableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.action, target: self, action: #selector(exportData(sender:)))
         navigationItem.rightBarButtonItem?.tintColor = .white
         
-        //set delegate for location
-        location.delegate = self
+        
+        
+        
+        if(sharedBleConnected.hasDeviceConnected){
+            //this view will display only information of GNSS device location
+            //need to get callback functions
+            sharedBleConnected.getPeripheralConnected().delegate = self
+            debugPrint(sharedBleConnected.getPeripheralConnected())
+            sharedBleConnected.getPeripheralConnected().discoverServices(nil)  //need to get services to notify
+            
+        }else{
+            //this view will display only information of this location
+            //set delegate for location
+             location.delegate = self
+        }
+       
+        
+        
        
         timestampFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
         timestampFormatter.dateFormat = "HHmmss.SSS"
@@ -197,6 +218,133 @@ class NMEATableViewController: UITableViewController {
     override func viewDidDisappear(_ animated: Bool) {
         isStartedNMEA = false
     }
+    
+    
+    
+    
+    
+    // BLUETOOTH **************************************************
+    //MARK: - methods of delegate CBperiperal to work with BLUETOOTH
+    
+    //discovering services for connected device: didDiscoverService() handles and filters services, so that we can use whichever service we are interested in right away
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        print("*****************************************")
+        print("didDiscoverServices")
+        if ((error) != nil) {
+            print("Error discovering services: \(error!.localizedDescription)")
+            return
+        }
+        
+        guard let services = peripheral.services else {
+            return
+        }
+        //We need to discover the all characteristic
+        for service in services {
+            
+            peripheral.discoverCharacteristics(nil, for: service)
+        }
+        print("Discovered Services: \(services)")
+    }
+    //discoverCharacteristics(_:) function, the central manager will call the didDiscoverCharacteristicsFor() delegate function and provide the discovered characteristics of the specified service.
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+        
+        print("*******************************************************")
+        
+        if ((error) != nil) {
+            print("Error discovering services: \(error!.localizedDescription)")
+            return
+        }
+        
+        guard let characteristics = service.characteristics else {
+            return
+        }
+        
+        print("Found \(characteristics.count) characteristics!")
+        
+        for characteristic in characteristics {
+            //looks for the right characteristic
+            //BLE_Characteristic_uuid_Rx
+            //            if characteristic.uuid.isEqual(peripheral.charac)  {
+            //                rxCharacteristic = characteristic
+            //
+            //                //Once found, subscribe to the this particular characteristic...
+            //                peripheral.setNotifyValue(true, for: rxCharacteristic!)
+            //                // We can return after calling CBPeripheral.setNotifyValue because CBPeripheralDelegate's
+            //                // didUpdateNotificationStateForCharacteristic method will be called automatically
+            //                peripheral.readValue(for: characteristic)
+            //                print("Rx Characteristic: \(characteristic.uuid)")
+            //            }
+            //            if characteristic.uuid.isEqual(BLE_Characteristic_uuid_Tx){
+            //                txCharacteristic = characteristic
+            //                print("Tx Characteristic: \(characteristic.uuid)")
+            //            }
+            peripheral.discoverDescriptors(for: characteristic)
+            debugPrint("characteristic: \(characteristic)")
+            
+            print("peripheral:\(peripheral) and service:\(service)")
+            for characteristic in service.characteristics!
+            {
+                peripheral.setNotifyValue(true, for: characteristic)
+            }
+        }
+    }
+    
+    
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?){
+//        print("didUpdateValue : \(peripheral)")
+//        print("characteristic changed:\(characteristic)")
+//        print("error \(String(describing: error))")
+//
+//        //value to ascii
+//        print("characteristics properties \(characteristic.properties)")
+//        print("characteristics value \(String(describing: String(bytes: characteristic.value!, encoding: String.Encoding.utf8)))")
+//
+//
+        
+        //debugPrint("----------------------------------------------------------")
+        let s = String(bytes: characteristic.value!, encoding: String.Encoding.ascii)
+        if(s == nil){
+            return
+        }
+        //debugPrint("----------------------------------------------------------")
+        print("didUpdateValueFor characteristic   s=\(String(describing: s))")
+        if(!s!.isEmpty){
+           //nmeaDataString.append(s!)
+            print("s isn't empty")
+            if(collectStringNmea.hasStringNMEA){
+                print("has string nmea in CollectString")
+                if(nmeaDataString.count > 100){
+                    nmeaDataString.removeAll()
+                }
+                nmeaDataString.append(collectStringNmea.pullString())
+                self.tableView.reloadData()
+            }
+           // print("pushString CollectString")
+            collectStringNmea.pushString(nmeaForString: s!)
+            //debugPrint("nmeatableview received from BLE, not has dataString to pull: \(String(describing: s))")
+        }
+        
+    }
+    
+    //error connecting, show alert with error
+    func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?) {
+        
+        let alert = UIAlertController(title:"Failed connecting to device", message: "Failed to connect \(peripheral) cause of \(String(describing: error))", preferredStyle: .alert)
+        alert.addAction(.init(title: "Ok", style: .default, handler:{ action in
+            switch action.style{
+            case .default:
+                self.dismiss(animated: true, completion: nil)
+                break;
+            case .cancel:
+                break
+            case .destructive:
+                break
+            @unknown default:
+                fatalError()
+            }}))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     
 }

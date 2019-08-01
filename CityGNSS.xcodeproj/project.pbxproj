@@ -21,7 +21,11 @@
 		A91D1C1422C6221C00359BC9 /* CGFramework in Resources */ = {isa = PBXBuildFile; fileRef = A91D1C1322C6221B00359BC9 /* CGFramework */; };
 		A91D1C2222C62A0A00359BC9 /* CGFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91D1C1A22C6255700359BC9 /* CGFramework.framework */; };
 		A91D1C2322C62A0A00359BC9 /* CGFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A91D1C1A22C6255700359BC9 /* CGFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A91D927722D772EA00075A97 /* ChooseBLETableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91D927622D772EA00075A97 /* ChooseBLETableViewController.swift */; };
+		A91D927922D7746C00075A97 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91D927822D7746C00075A97 /* CoreBluetooth.framework */; };
 		A91F35B2229C372C00AEDB5C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91F35B1229C372C00AEDB5C /* LocationManager.swift */; };
+		A9222C5B22D8A793006F181D /* BleConnected.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9222C5A22D8A793006F181D /* BleConnected.swift */; };
+		A9222C5D22D8E266006F181D /* CollectStringFromBLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9222C5C22D8E266006F181D /* CollectStringFromBLE.swift */; };
 		A9228DBF2278838800B723C1 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9228DBE2278838800B723C1 /* Settings.storyboard */; };
 		A9228DC12278853B00B723C1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9228DC02278853B00B723C1 /* TableViewController.swift */; };
 		A923DB5B22AFC86F00A3CADA /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A923DB5A22AFC86F00A3CADA /* UIColorHex.swift */; };
@@ -108,7 +112,11 @@
 		A91D1BFB22C4C73300359BC9 /* SatelliteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SatelliteTableViewCell.xib; sourceTree = "<group>"; };
 		A91D1C1322C6221B00359BC9 /* CGFramework */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CGFramework; sourceTree = "<group>"; };
 		A91D1C1522C6255600359BC9 /* CGFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CGFramework.xcodeproj; path = CGFramework/CGFramework.xcodeproj; sourceTree = "<group>"; };
+		A91D927622D772EA00075A97 /* ChooseBLETableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBLETableViewController.swift; sourceTree = "<group>"; };
+		A91D927822D7746C00075A97 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		A91F35B1229C372C00AEDB5C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A9222C5A22D8A793006F181D /* BleConnected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleConnected.swift; sourceTree = "<group>"; };
+		A9222C5C22D8E266006F181D /* CollectStringFromBLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectStringFromBLE.swift; sourceTree = "<group>"; };
 		A9228DBE2278838800B723C1 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		A9228DC02278853B00B723C1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		A923DB5A22AFC86F00A3CADA /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
@@ -145,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A91D927922D7746C00075A97 /* CoreBluetooth.framework in Frameworks */,
 				A90A7F0C227B4E6F0078E78B /* MapKit.framework in Frameworks */,
 				A91D1C2222C62A0A00359BC9 /* CGFramework.framework in Frameworks */,
 				8D8F04C95AB184CC3A721789 /* Pods_CityGNSS.framework in Frameworks */,
@@ -184,6 +193,7 @@
 		A90A7F0A227B4E6F0078E78B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A91D927822D7746C00075A97 /* CoreBluetooth.framework */,
 				A91D1C1522C6255600359BC9 /* CGFramework.xcodeproj */,
 				A90A7F0B227B4E6F0078E78B /* MapKit.framework */,
 				3950C1AFEBC14DF4C76EF798 /* Pods_CityGNSS.framework */,
@@ -198,6 +208,7 @@
 				A9228DC02278853B00B723C1 /* TableViewController.swift */,
 				A90A7F06227AFF9E0078E78B /* SelectConstellationTableViewController.swift */,
 				A9363D02228DA1C300EB6C02 /* DataSettingsDelegate.swift */,
+				A91D927622D772EA00075A97 /* ChooseBLETableViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -232,6 +243,7 @@
 				A9CD8779229E9A96005AF6C4 /* NMEATableViewController.xib */,
 				A951FC2022A801A100D94F34 /* NMEASentenceParser.swift */,
 				A912F82122BA373C00838864 /* GenerateNMEA.swift */,
+				A9222C5C22D8E266006F181D /* CollectStringFromBLE.swift */,
 			);
 			path = NMEAdata;
 			sourceTree = "<group>";
@@ -242,6 +254,7 @@
 				A923DB5A22AFC86F00A3CADA /* UIColorHex.swift */,
 				A923DB5C22B1064700A3CADA /* UIViewControllerConfigureNavBar.swift */,
 				A97EDDBA22B167D000FDED05 /* LocalizableLabelString.swift */,
+				A9222C5A22D8A793006F181D /* BleConnected.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -495,10 +508,13 @@
 				A923DB5B22AFC86F00A3CADA /* UIColorHex.swift in Sources */,
 				A91D1BF722C3AB2500359BC9 /* SatelliteListViewController.swift in Sources */,
 				A90A7F07227AFF9E0078E78B /* SelectConstellationTableViewController.swift in Sources */,
+				A9222C5D22D8E266006F181D /* CollectStringFromBLE.swift in Sources */,
+				A91D927722D772EA00075A97 /* ChooseBLETableViewController.swift in Sources */,
 				A9D6568B22667286007CF8BC /* HomeController.swift in Sources */,
 				A9228DC12278853B00B723C1 /* TableViewController.swift in Sources */,
 				A95B9D902260A4A300D6D841 /* MenuController.swift in Sources */,
 				A912F82222BA373C00838864 /* GenerateNMEA.swift in Sources */,
+				A9222C5B22D8A793006F181D /* BleConnected.swift in Sources */,
 				A9CD877A229E9A96005AF6C4 /* NMEATableViewController.swift in Sources */,
 				A91D1BFC22C4C73300359BC9 /* SatelliteTableViewCell.swift in Sources */,
 				A91F35B2229C372C00AEDB5C /* LocationManager.swift in Sources */,

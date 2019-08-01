@@ -54,7 +54,8 @@ class HomeController: UIViewController {
         //configure navigattionbar
         configureNavigationBar(with: self.navigationController!.navigationBar)
         navigationItem.title = "CityGNSS"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu-filled-50").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuToggle))
+       navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu-filled-50").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuToggle))
+        
         
         map.delegate = self
         view_accuracy.isHidden = false

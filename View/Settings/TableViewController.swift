@@ -24,6 +24,7 @@ class TableViewController: UITableViewController {
     
     @IBOutlet weak var switchMapType: UISwitch!
     @IBOutlet weak var version: UILabel!
+    @IBOutlet weak var lb_blePeripheral: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -177,6 +178,14 @@ class TableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if(sharedBleConnected.hasDeviceConnected){
+            lb_blePeripheral.text = sharedBleConnected.getPeripheralConnected().name
+        }else{
+            lb_blePeripheral.text = ""
+        }
+    }
 
 }
 
